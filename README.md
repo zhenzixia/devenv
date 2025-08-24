@@ -84,43 +84,7 @@ sudo kubeadm join <control-plane-ip>:6443 --token <token> --discovery-token-ca-c
 - **View logs**: `sudo journalctl -xeu kubelet`
 - **Reset and retry**: `./reset-k8s-cluster.sh` then `./init-k8s-cluster.sh`
 
----
 
-## Node.js Setup
-
-### Install npm
-```bash
-sudo apt install npm
-```
-
-### Install Claude Code
-```bash
-sudo npm install -g @anthropic-ai/claude-code
-```
-
-### Node.js Version Issues
-
-If you encounter Node.js version compatibility issues:
-
-**Problem**: Node version too low
-```
-npm WARN EBADENGINE Unsupported engine {
-npm WARN EBADENGINE   package: '@anthropic-ai/claude-code@1.0.89',
-npm WARN EBADENGINE   required: { node: '>=18.0.0' },
-npm WARN EBADENGINE   current: { node: 'v12.22.9', npm: '8.5.1' }
-npm WARN EBADENGINE }
-```
-
-**Solution**: Upgrade Node.js using nvm:
-```bash
-# Install/update to latest LTS version
-nvm install --lts
-nvm use --lts
-
-# Or install a specific version
-nvm install 18
-nvm use 18
-```
 
 
 
